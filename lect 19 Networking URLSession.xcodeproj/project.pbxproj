@@ -14,6 +14,7 @@
 		0845B86F28D8B910003D8A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0845B86E28D8B910003D8A11 /* Assets.xcassets */; };
 		0845B87228D8B910003D8A11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0845B87028D8B910003D8A11 /* LaunchScreen.storyboard */; };
 		0845B87A28D8D4DA003D8A11 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845B87928D8D4DA003D8A11 /* Post.swift */; };
+		0845B87C28D8DFCC003D8A11 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0845B87B28D8DFCC003D8A11 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0845B87128D8B910003D8A11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0845B87328D8B910003D8A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0845B87928D8D4DA003D8A11 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0845B87B28D8DFCC003D8A11 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0845B86E28D8B910003D8A11 /* Assets.xcassets */,
 				0845B87028D8B910003D8A11 /* LaunchScreen.storyboard */,
 				0845B87328D8B910003D8A11 /* Info.plist */,
+				0845B87B28D8DFCC003D8A11 /* NetworkManager.swift */,
 			);
 			path = "lect 19 Networking URLSession";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				0845B86A28D8B90E003D8A11 /* ViewController.swift in Sources */,
 				0845B86628D8B90E003D8A11 /* AppDelegate.swift in Sources */,
+				0845B87C28D8DFCC003D8A11 /* NetworkManager.swift in Sources */,
 				0845B86828D8B90E003D8A11 /* SceneDelegate.swift in Sources */,
 				0845B87A28D8D4DA003D8A11 /* Post.swift in Sources */,
 			);
