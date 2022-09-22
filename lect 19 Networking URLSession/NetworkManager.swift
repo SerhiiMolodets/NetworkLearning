@@ -43,7 +43,7 @@ class NetworkManager {
     func postCreatePost(_ post: Post,  complitionHandler: @escaping (Post) -> Void) {
         let sendData = try? JSONEncoder().encode(post)
         guard let url = URL(string: baseURL + APIs.posts.rawValue),
-        let data = sendData else { return }
+              let data = sendData else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.POST.rawValue
@@ -59,8 +59,28 @@ class NetworkManager {
                 if let responcePost = try? JSONDecoder().decode(Post.self, from: responceData) {
                     complitionHandler(responcePost)
                 }
-
+                
             }
         }.resume()
+    }
+    
+    func getPostBy(userId: Int, complitionHandler: @escaping (([Post]) -> Void)) {
+        guard let url = URL(string: baseURL + APIs.posts.rawValue) else { return }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        components?.queryItems = [ URLQueryItem(name: "userID", value: "\(userId)")]
+        
+        guard let queryURL = components?.url else { return }
+        
+        URLSession.shared.dataTask(with: queryURL) { (data, responce, error) in
+            if error != nil {
+                print("error getPostBy")
+            } else if let resp = responce as? HTTPURLResponse,
+                      resp.statusCode == 200,
+                      let receiveData = data {
+                let posts = try? JSONDecoder().decode([Post].self, from: receiveData)
+                complitionHandler(posts ?? [])
+            }
+        }
     }
 }
