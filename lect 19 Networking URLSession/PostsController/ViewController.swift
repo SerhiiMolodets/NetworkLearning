@@ -23,13 +23,20 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-
+    
     var networkManager = NetworkManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager.getAllPosts {[weak self] (posts) in
+        //        networkManager.getAllPosts {[weak self] (posts) in
+        //            DispatchQueue.main.async {
+        //                self?.posts = posts
+        //            }
+        //        }
+        
+        
+        networkManager.getPostBy(userId: 3) { [weak self] (posts) in
             DispatchQueue.main.async {
                 self?.posts = posts
             }
@@ -46,21 +53,21 @@ class ViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     alert.dismiss(animated: true)
                 }
-
+                
             }
-
+            
         }
     }
     
-
+    
 }
 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return posts.count
+        return posts.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellID", for: indexPath) as! PostTableViewCell
         cell.configure(posts[indexPath.row])

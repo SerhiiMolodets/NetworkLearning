@@ -76,11 +76,11 @@ class NetworkManager {
             if error != nil {
                 print("error getPostBy")
             } else if let resp = responce as? HTTPURLResponse,
-                      resp.statusCode == 200,
+                      resp.statusCode%200 == 0,
                       let receiveData = data {
                 let posts = try? JSONDecoder().decode([Post].self, from: receiveData)
                 complitionHandler(posts ?? [])
             }
-        }
+        }.resume()
     }
 }
