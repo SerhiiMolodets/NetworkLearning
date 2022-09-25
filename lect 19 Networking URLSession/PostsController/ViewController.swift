@@ -79,22 +79,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-//dont counting commits
-//dont counting commits
-
-//dont counting commits
-
-//dont counting commits
-
-//dont counting commits
-
-//dont counting commits
-
-//dont counting commits
-
-//dont counting commits
-//dont counting commits
-
-//dont counting commits
 
 
